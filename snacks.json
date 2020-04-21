@@ -1,0 +1,28 @@
+{
+    "snack": [
+        {
+            "name": "sample",
+            "expDate": "MMM DD YYYY"
+        },
+
+        {
+            "name": "sample2",
+            "expDate": "?"
+        },
+
+        {
+            "name": "sample",
+            "expDate": "MMM DD YYYY"
+        },
+
+        {
+            "name": "sample",
+            "expDate": "MMM DD YYYY"
+        },
+
+        {
+            "name": "sample",
+            "expDate": "MMM DD YYYY"
+        }
+    ]
+}

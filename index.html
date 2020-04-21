@@ -1,0 +1,135 @@
+<html>
+
+<head>
+    <title>Home Snack System</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        body {
+            background-image: linear-gradient(20deg, rgb(27, 27, 255), pink);
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        table {
+            width: 75%;
+            max-width: 700px;
+            margin: auto;
+            color:#666;
+            font-size:12px;
+            text-shadow: 1px 1px 0px #fff;
+            background:#eaebec;
+            border:#ccc 1px solid;
+
+            -moz-border-radius:3px;
+            -webkit-border-radius:3px;
+            border-radius:3px;
+
+            -moz-box-shadow: 0 1px 2px #d1d1d1;
+            -webkit-box-shadow: 0 1px 2px #d1d1d1;
+            box-shadow: 0 1px 2px #d1d1d1;
+        }
+        td {
+            border-top: 1px solid;
+            padding: 18px;
+        }
+        button {
+            background: transparent;
+            color: rgb(241, 241, 241);
+            border: 2px solid pink;
+            border-radius: 3%;
+            padding: 12px;
+        }
+        p {
+            color: white;
+        }
+        #heading {
+            color: white;
+            text-shadow: 1px 1px 0px rgb(129, 129, 129);
+        }
+        #left {
+            width: 100%;
+        }
+        #right {
+            width: 100%;
+        }
+        .firstRow {
+            background: #cecece;
+            border-top: none;
+            color: #666;
+            font-weight: bold;
+            text-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="heading">Snack Index</h1>
+
+    <div id="left">
+        <button onclick="pullRandSnack()">Click for a random snack!</button>
+        <p id="rand"></p>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+    
+    <div id="right">
+        <table id="container" cellspacing='0'>
+            <tr>
+                <td class="firstRow"></td>
+                <td class="firstRow">Snack</td>
+                <td class="firstRow">Expiration Date</td>
+            </tr>
+        </table>
+    </div>
+    
+
+    <script>
+        d = document;
+        arrOfSnacks = ["No snacks for you >:("]; //contains all snacks
+
+        var xmlhttp = new XMLHttpRequest(); //gets content of json file
+        xmlhttp.onreadystatechange = function() { //do this function when a certain criteria is met
+            if (this.readyState == 4 && this.status == 200) { //"this" refers to the function we are calling; 4 is ready; 200 is ok
+                var mydata = JSON.parse(this.responseText); //the json file that we get will be saved as mydata
+                
+                var numOfSnacks = mydata.snack.length;
+
+                for (var i = 0; i < numOfSnacks; i++) {
+                    //Create appropriate num of table rows                    
+                    var tr = d.createElement("tr");
+                    var td = d.createElement("td");
+                    var td2 = d.createElement("td");
+                    var td3 = d.createElement("td");
+                    tr.appendChild(td);
+                    tr.appendChild(td2);
+                    tr.appendChild(td3);
+                    var table = d.getElementById("container");
+                    table.appendChild(tr);
+
+                    //Append snack info
+                    var snackNum = i + 1;
+                    var text = d.createTextNode(i + 1);
+                    td.appendChild(text);
+                    var name = mydata.snack[i].name;
+                    arrOfSnacks.push(name);
+                    var text2 = d.createTextNode(name);
+                    td2.appendChild(text2);
+                    var text3 = d.createTextNode(mydata.snack[i].expDate);
+                    td3.appendChild(text3);
+                }
+            }
+        };
+        xmlhttp.open("GET","snacks.json",true); //get and open the json file
+        xmlhttp.send(); //send the file to the server
+
+        function pullRandSnack() {
+            var randNum = Math.floor(Math.random()* arrOfSnacks.length);
+            var snack = arrOfSnacks[randNum];
+            d.getElementById("rand").innerHTML = snack;
+        }
+    </script>
+</body>
+
+</html>
