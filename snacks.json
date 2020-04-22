@@ -47,17 +47,77 @@
 
         {
             "name": "Egg Roll Wafer",
-            "expDate": "?"
+            "expDate": "Sep 9, 2020"
         },
 
         {
             "name": "Lemond",
+            "expDate": "Dec 22, 2020 (newer pack: Jan 19, 2021)"
+        },
+
+        {
+            "name": "Soda Crackers",
+            "expDate": "Sep 26, 2020"
+        },
+
+        {
+            "name": "Mini Bear Cookies",
+            "expDate": "March 14, 2021"
+        },
+
+        {
+            "name": "Pork Jerky",
+            "expDate": "Oct 12, 2020"
+        },
+
+        {
+            "name": "Dried Blueberries",
+            "expDate": "Feb 26, 2020"
+        },
+
+        {
+            "name": "Black Sesame Cookies",
+            "expDate": "Feb 2, 2021"
+        },
+
+        {
+            "name": "Raisons",
+            "expDate": "Missing exp date!"
+        },
+
+        {
+            "name": "Pianomo Rolls",
+            "expDate": "Soon"
+        },
+
+        {
+            "name": "Cheesecake",
             "expDate": "?"
         },
 
         {
-            "name": "Seasoned Soda Crackers",
+            "name": "Classic Sea Salt Chips",
+            "expDate": "Jul 18, 2020"
+        },
+
+        {
+            "name": "Macadamia Nut Shortbread Cookies",
+            "expDate": "Jul 22, 2020"
+        },
+
+        {
+            "name": "Sachima (Soft Flour Cake)",
             "expDate": "?"
+        },
+
+        {
+            "name": "Crunchy Rice Cracker",
+            "expDate": "?"
+        },
+
+        {
+            "name": "Organic Fruit Bar",
+            "expDate": "Apr 6, 2020"
         }
     ]
 }

@@ -8,26 +8,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.widgets.min.js"></script>    
-    <!-- <script>
-        document.addEventListener("DOMContentLoaded", () => { //once dom content has finished loading...
-            $(document).ready( function () {
-                $('#tableContainer').tablesorter(); //sorts the table
-            } );
-
-            $(function() {
-                $('table').tablesorter({ theme : 'base' }); //call the tablesorter plugin
-
-                $('button.applyid').click(function() {
-                // This method adds the 'columns' widget & sorts the table to make it visible
-                    $('table')
-                        .trigger('applyWidgetId', 'columns')
-                        .trigger('sorton', [ [[0,0]] ]);
-                    return false;
-                });
-            });
-        });
-        
-    </script> -->
 
     <style>
         body {
@@ -35,7 +15,7 @@
             font-family: Arial, Helvetica, sans-serif;
         }
         table {
-            width: 75%;
+            width: 80%;
             max-width: 700px;
             margin: auto;
             color:#666;
@@ -122,10 +102,12 @@
             <tbody id="tbody"></tbody>
         </table>
     </div>
-    
 
+    <br>
+    <br>
+    
     <script>
-        //check for things that are expiring or close to expiring
+        //check for things that are expiring or close to expiring; add hidden elements gated by a pw?
         d = document;
         arrOfSnacks = ["No snacks for you >:("]; //contains all snacks
 
@@ -180,7 +162,7 @@
         xmlhttp.open("GET","snacks.json",true); //get and open the json file
         xmlhttp.send(); //send the file to the server
 
-        function pullRandSnack() {
+        function pullRandSnack() { //get a random snack
             var randNum = Math.floor(Math.random()* arrOfSnacks.length);
             var snack = arrOfSnacks[randNum];
             d.getElementById("rand").innerHTML = snack;
