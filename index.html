@@ -5,35 +5,29 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready( function () {
-            $('#container').DataTable();
-        } );
-    </script>-->
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.widgets.min.js"></script>    
-    <script>
-        $(document).ready( function () {
-            $('#container').tablesorter();
-        } );
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", () => { //once dom content has finished loading...
+            $(document).ready( function () {
+                $('#tableContainer').tablesorter(); //sorts the table
+            } );
 
-        $(function() {
-            $('table').tablesorter({ theme : 'base' }); //call the tablesorter plugin
+            $(function() {
+                $('table').tablesorter({ theme : 'base' }); //call the tablesorter plugin
 
-            $('button.applyid').click(function() {
-            // This method adds the 'columns' widget & sorts the table to make it visible
-                $('table')
-                    .trigger('applyWidgetId', 'columns')
-                    .trigger('sorton', [ [[0,0]] ]);
-                return false;
+                $('button.applyid').click(function() {
+                // This method adds the 'columns' widget & sorts the table to make it visible
+                    $('table')
+                        .trigger('applyWidgetId', 'columns')
+                        .trigger('sorton', [ [[0,0]] ]);
+                    return false;
+                });
             });
         });
-    </script>
+        
+    </script> -->
 
     <style>
         body {
@@ -101,10 +95,6 @@
         .tablesorter-headerDesc {
             background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
         }
-        .tablesorter .sorter-false {
-            background-image: none;
-            cursor: default;
-        }
     </style>
 </head>
 
@@ -121,7 +111,7 @@
     <br>
     
     <div id="right">
-        <table id="container" cellspacing='0'>
+        <table id="tableContainer" cellspacing='0'>
             <thead>
                 <tr>
                     <th class="firstRow"></th>
@@ -135,6 +125,7 @@
     
 
     <script>
+        //check for things that are expiring or close to expiring
         d = document;
         arrOfSnacks = ["No snacks for you >:("]; //contains all snacks
 
@@ -168,6 +159,22 @@
                     var text3 = d.createTextNode(mydata.snack[i].expDate);
                     td3.appendChild(text3);
                 }
+                
+                $(document).ready( function () {
+                    $('#tableContainer').tablesorter(); //sorts the table
+                } );
+                $(function() {
+                    $('table').tablesorter({ theme : 'base' }); //call the tablesorter plugin
+
+                    $('button.applyid').click(function() {
+                    // This method adds the 'columns' widget & sorts the table to make it visible
+                        $('table')
+                            .trigger('applyWidgetId', 'columns')
+                            .trigger('sorton', [ [[0,0]] ]);
+                        return false;
+                    });
+                });
+                
             }
         };
         xmlhttp.open("GET","snacks.json",true); //get and open the json file

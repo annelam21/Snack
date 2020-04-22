@@ -16,13 +16,48 @@
         },
 
         {
-            "name": "Chocoroom",
-            "expDate": "MMM DD YYYY"
+            "name": "Chocorooms",
+            "expDate": "May 25, 2020"
         },
 
         {
-            "name": "sample",
-            "expDate": "MMM DD YYYY"
+            "name": "Wheat Thins",
+            "expDate": "Jul 15 2020"
+        },
+
+        {
+            "name": "Maui Style Chips",
+            "expDate": "May 5, 2020"
+        },
+
+        {
+            "name": "Taro Cookies",
+            "expDate": "Sep 19, 2020"
+        },
+
+        {
+            "name": "Pistachio",
+            "expDate": "?"
+        },
+
+        {
+            "name": "Trail Mix",
+            "expDate": "?"
+        },
+
+        {
+            "name": "Egg Roll Wafer",
+            "expDate": "?"
+        },
+
+        {
+            "name": "Lemond",
+            "expDate": "?"
+        },
+
+        {
+            "name": "Seasoned Soda Crackers",
+            "expDate": "?"
         }
     ]
 }
