@@ -1,22 +1,22 @@
 {
     "snack": [
         {
-            "name": "sample",
-            "expDate": "MMM DD YYYY"
+            "name": "Ritz Crackers",
+            "expDate": "AUG 30 2020"
         },
 
         {
-            "name": "sample2",
-            "expDate": "?"
+            "name": "European Cookie Selection",
+            "expDate": "SEP 30 2020"
         },
 
         {
-            "name": "sample",
-            "expDate": "MMM DD YYYY"
+            "name": "Fruit by the Foot",
+            "expDate": "NOV 12 2020"
         },
 
         {
-            "name": "sample",
+            "name": "Chocoroom",
             "expDate": "MMM DD YYYY"
         },
 
